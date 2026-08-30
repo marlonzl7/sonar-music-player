@@ -62,6 +62,11 @@ As configurações de conexão com o banco devem ser definidas no arquivo:
 src/main/resources/application.properties
 ```
 
+> **Nota:** os valores padrão em `application.properties` (após os `:`) devem 
+> ser mantidos sincronizados com o `.env`, já que o Spring Boot roda fora do 
+> Docker e não carrega o `.env` automaticamente (diferente do Docker Compose, 
+> que lê o `.env` sozinho).
+
 ## Estrutura
 
 ```text

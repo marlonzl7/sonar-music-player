@@ -73,7 +73,7 @@ Cabeçalho `Location: /api/usuarios/{id}`.
 }
 ```
 
-### `GET /api/usuarios/email/{email}`
+### `POST /api/usuarios/login`
 
 Busca um usuário pelo e-mail (usado no fluxo de "login").
 

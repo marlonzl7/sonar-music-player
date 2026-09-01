@@ -40,7 +40,7 @@ public class UsuarioService {
         usuario = dao.salvar(usuario);
 
         return new CadastroUsuarioResponse(
-                usuario.getId(),
+                usuario.getIdUsuario(),
                 usuario.getNome(),
                 usuario.getEmail()
         );
@@ -54,7 +54,7 @@ public class UsuarioService {
         }
 
         return new ObterUsuarioPorEmailResponse(
-                usuario.getId(),
+                usuario.getIdUsuario(),
                 usuario.getNome(),
                 usuario.getEmail()
         );

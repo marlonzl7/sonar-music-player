@@ -2,23 +2,23 @@ package com.sonar.backend.model;
 
 public class Artista {
 
-    private Long id;
+    private Long idArtista;
     private String nome;
 
     public Artista() {
     }
 
     public Artista(Long id, String nome) {
-        this.id = id;
+        this.idArtista = id;
         this.nome = nome;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdArtista() {
+        return idArtista;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdArtista(Long idArtista) {
+        this.idArtista = idArtista;
     }
 
     public String getNome() {

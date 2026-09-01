@@ -19,7 +19,7 @@ public class AlbumDAO {
     public List<Album> listar() {
         String sql = """
                 SELECT
-                    id_album AS id,
+                    id_album AS idUsuario,
                     id_artista AS idArtista,
                     titulo,
                     ano
@@ -35,7 +35,7 @@ public class AlbumDAO {
     public List<Album> listarPorIdArtista(Long idArtista) {
         String sql = """
                 SELECT
-                    id_album AS id,
+                    id_album AS idUsuario,
                     id_artista AS idArtista,
                     titulo,
                     ano

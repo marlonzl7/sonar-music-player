@@ -2,7 +2,7 @@ package com.sonar.backend.model;
 
 public class Album {
 
-    private Long id;
+    private Long idAlbum;
     private Long idArtista;
     private String titulo;
     private Integer ano;
@@ -11,18 +11,18 @@ public class Album {
     }
 
     public Album(Long id, Long idArtista, String titulo, Integer ano) {
-        this.id = id;
+        this.idAlbum = id;
         this.idArtista = idArtista;
         this.titulo = titulo;
         this.ano = ano;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdAlbum() {
+        return idAlbum;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdAlbum(Long idAlbum) {
+        this.idAlbum = idAlbum;
     }
 
     public Long getIdArtista() {

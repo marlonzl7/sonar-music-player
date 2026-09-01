@@ -17,7 +17,7 @@ public class ArtistaDAO {
     }
 
     public List<Artista> listar() {
-        String sql = "SELECT id_artista AS id, nome FROM artista";
+        String sql = "SELECT id_artista AS idArtista, nome FROM artista";
 
         return jdbcTemplate.query(
                 sql,

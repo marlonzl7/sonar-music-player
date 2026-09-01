@@ -17,7 +17,7 @@ public class GeneroDAO {
     }
 
     public List<Genero> listar() {
-        String sql = "SELECT id_genero AS id, nome FROM genero";
+        String sql = "SELECT id_genero AS idGenero, nome FROM genero";
 
         return jdbcTemplate.query(
                 sql,

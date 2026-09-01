@@ -2,23 +2,23 @@ package com.sonar.backend.model;
 
 public class Genero {
 
-    private Long id;
+    private Long idGenero;
     private String nome;
 
     public Genero() {
     }
 
     public Genero(Long id, String nome) {
-        this.id = id;
+        this.idGenero = id;
         this.nome = nome;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdGenero() {
+        return idGenero;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdGenero(Long idGenero) {
+        this.idGenero = idGenero;
     }
 
     public String getNome() {

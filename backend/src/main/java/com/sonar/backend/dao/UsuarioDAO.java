@@ -37,7 +37,7 @@ public class UsuarioDAO {
 
         Long idGerado = keyHolder.getKeyAs(Long.class);
 
-        usuario.setId(idGerado);
+        usuario.setIdUsuario(idGerado);
 
         return usuario;
     }
@@ -57,7 +57,7 @@ public class UsuarioDAO {
     public Usuario buscarPorEmail(String email) {
         String sql = """
                 SELECT
-                    id_usuario AS id,
+                    id_usuario AS idUsuario,
                     nome,
                     email
                 FROM usuario

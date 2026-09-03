@@ -1,7 +1,7 @@
 package com.sonar.backend.controller;
 
-import com.sonar.backend.dto.CadastroUsuarioRequest;
-import com.sonar.backend.dto.CadastroUsuarioResponse;
+import com.sonar.backend.dto.CadastrarUsuarioRequest;
+import com.sonar.backend.dto.CadastrarUsuarioResponse;
 import com.sonar.backend.dto.ObterUsuarioPorEmailRequest;
 import com.sonar.backend.dto.ObterUsuarioPorEmailResponse;
 import com.sonar.backend.service.UsuarioService;
@@ -21,8 +21,8 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<CadastroUsuarioResponse> cadastrar(@RequestBody CadastroUsuarioRequest request) {
-        CadastroUsuarioResponse response = service.cadastrar(request);
+    public ResponseEntity<CadastrarUsuarioResponse> cadastrar(@RequestBody CadastrarUsuarioRequest request) {
+        CadastrarUsuarioResponse response = service.cadastrar(request);
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)

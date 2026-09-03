@@ -22,7 +22,7 @@ public class UsuarioService {
         this.dao = dao;
     }
 
-    public CadastroUsuarioResponse cadastrar(CadastroUsuarioRequest request) {
+    public CadastrarUsuarioResponse cadastrar(CadastrarUsuarioRequest request) {
         List<ErroCampoDTO> errosValidacao = validador.validar(request);
 
         if (!errosValidacao.isEmpty()) {
@@ -39,7 +39,7 @@ public class UsuarioService {
 
         usuario = dao.salvar(usuario);
 
-        return new CadastroUsuarioResponse(
+        return new CadastrarUsuarioResponse(
                 usuario.getIdUsuario(),
                 usuario.getNome(),
                 usuario.getEmail()

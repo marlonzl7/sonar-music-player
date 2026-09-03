@@ -1,6 +1,6 @@
 package com.sonar.backend.dto;
 
-public record CadastroUsuarioRequest(
+public record CadastrarUsuarioRequest(
         String nome,
         String email
 ) {}

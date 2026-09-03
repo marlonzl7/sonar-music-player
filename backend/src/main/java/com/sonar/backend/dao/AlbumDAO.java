@@ -1,6 +1,7 @@
 package com.sonar.backend.dao;
 
 import com.sonar.backend.model.Album;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -48,5 +49,45 @@ public class AlbumDAO {
                 new BeanPropertyRowMapper<>(Album.class),
                 idArtista
         );
+    }
+
+    public Album obterPorId(Long idAlbum) {
+        String sql = "SELECT * FROM album WHERE id_album = ?";
+
+        try {
+            return jdbcTemplate.queryForObject(
+                    sql,
+                    new BeanPropertyRowMapper<>(Album.class),
+                    idAlbum
+            );
+        } catch (EmptyResultDataAccessException ex) {
+            return null;
+        }
+    }
+
+    public boolean existePorId(Long idAlbum) {
+        String sql = "SELECT COUNT(*) FROM album WHERE id_album = ?";
+
+        Integer quantidade = jdbcTemplate.queryForObject(
+                sql,
+                Integer.class,
+                idAlbum
+        );
+
+        return quantidade != null && quantidade > 0;
+    }
+
+    public Long obterIdArtistaPorId(Long idAlbum) {
+        String sql = "SELECT id_artista FROM album WHERE id_album = ?";
+
+        try {
+            return jdbcTemplate.queryForObject(
+                    sql,
+                    Long.class,
+                    idAlbum
+            );
+        } catch (EmptyResultDataAccessException ex) {
+            return null;
+        }
     }
 }

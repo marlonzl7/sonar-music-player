@@ -77,17 +77,4 @@ public class AlbumDAO {
         return quantidade != null && quantidade > 0;
     }
 
-    public Long obterIdArtistaPorId(Long idAlbum) {
-        String sql = "SELECT id_artista FROM album WHERE id_album = ?";
-
-        try {
-            return jdbcTemplate.queryForObject(
-                    sql,
-                    Long.class,
-                    idAlbum
-            );
-        } catch (EmptyResultDataAccessException ex) {
-            return null;
-        }
-    }
 }

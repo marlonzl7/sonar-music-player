@@ -125,7 +125,7 @@ Lista as músicas do usuário. Suporta filtros combináveis por meio de parâmet
 | `idArtista`  | integer | não         | filtra por artista                                                                   |
 | `idAlbum`    | integer | não         | filtra por álbum                                                                     |
 | `idGenero`   | integer | não         | filtra por gênero                                                                    |
-| `ordenarPor` | string  | não         | `dataCadastro` (padrão), `titulo`, `duracao`, `artista`                              |
+| `ordenarPor` | string  | não         | `dataCadastro` (padrão), `titulo`, `duracao`, `artista`, `album`, `genero`           |
 | `direcao`    | string  | não         | `asc` ou `desc` (padrão: `desc` quando `ordenarPor=dataCadastro`, `asc` nos demais)  |
 
 **Exemplo de requisição:**

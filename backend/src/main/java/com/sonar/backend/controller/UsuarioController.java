@@ -1,13 +1,12 @@
 package com.sonar.backend.controller;
 
-import com.sonar.backend.dto.CadastrarUsuarioRequest;
-import com.sonar.backend.dto.CadastrarUsuarioResponse;
-import com.sonar.backend.dto.ObterUsuarioPorEmailRequest;
-import com.sonar.backend.dto.ObterUsuarioPorEmailResponse;
+import com.sonar.backend.dto.*;
 import com.sonar.backend.service.UsuarioService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -32,6 +31,17 @@ public class UsuarioController {
     @PostMapping("/login")
     public ResponseEntity<ObterUsuarioPorEmailResponse> login(@RequestBody ObterUsuarioPorEmailRequest request) {
         ObterUsuarioPorEmailResponse response = service.obterUsuarioPorEmail(request);
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(response);
+    }
+
+    @GetMapping("/{id}/playlists")
+    public ResponseEntity<List<ObterPlaylistsUsuarioResponse>> listarPlaylists(
+            @PathVariable Long id
+    ) {
+        List<ObterPlaylistsUsuarioResponse> response = service.listarPlaylists(id);
 
         return ResponseEntity
                 .status(HttpStatus.OK)

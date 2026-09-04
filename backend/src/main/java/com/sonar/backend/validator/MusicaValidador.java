@@ -13,16 +13,6 @@ import java.util.List;
 @Component
 public class MusicaValidador {
 
-    private final ArtistaDAO artistaDAO;
-    private final AlbumDAO albumDAO;
-    private final GeneroDAO generoDAO;
-
-    public MusicaValidador(ArtistaDAO artistaDAO, AlbumDAO albumDAO, GeneroDAO generoDAO) {
-        this.artistaDAO = artistaDAO;
-        this.albumDAO = albumDAO;
-        this.generoDAO = generoDAO;
-    }
-
     public List<ErroCampoDTO> validarCadastro(CadastrarMusicaRequest request) {
         List<ErroCampoDTO> erros = new ArrayList<>();
 

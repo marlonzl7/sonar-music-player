@@ -75,4 +75,16 @@ public class UsuarioDAO {
         }
     }
 
+    public Boolean existePorId(Long idUsuario) {
+        String sql = "SELECT COUNT(*) FROM usuario WHERE id_usuario = ?";
+
+        Integer quantidade = jdbcTemplate.queryForObject(
+                sql,
+                Integer.class,
+                idUsuario
+        );
+
+        return quantidade != null && quantidade > 0;
+    }
+
 }

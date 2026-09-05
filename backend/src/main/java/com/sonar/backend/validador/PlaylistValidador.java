@@ -1,6 +1,7 @@
 package com.sonar.backend.validador;
 
 import com.sonar.backend.dto.AtualizarPlaylistRequest;
+import com.sonar.backend.dto.CadastrarMusicaPlaylistRequest;
 import com.sonar.backend.dto.CadastrarPlaylistRequest;
 import com.sonar.backend.dto.ErroCampoDTO;
 import org.springframework.stereotype.Component;
@@ -42,6 +43,24 @@ public class PlaylistValidador {
 
         if (erroNome != null) {
             erros.add(erroNome);
+        }
+
+        return erros;
+    }
+
+    public List<ErroCampoDTO> validarCadastroMusicaNaPlaylist(CadastrarMusicaPlaylistRequest request) {
+        List<ErroCampoDTO> erros = new ArrayList<>();
+
+        ErroCampoDTO erroIdMusica = validarIdNuloOuInvalido(request.idMusica(), "idMusica");
+
+        if (erroIdMusica != null) {
+            erros.add(erroIdMusica);
+        }
+
+        ErroCampoDTO erroIdUsuario = validarIdNuloOuInvalido(request.idUsuario(), "idUsuario");
+
+        if (erroIdUsuario != null) {
+            erros.add(erroIdUsuario);
         }
 
         return erros;

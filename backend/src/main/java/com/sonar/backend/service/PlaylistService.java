@@ -145,7 +145,7 @@ public class PlaylistService {
         MusicaPlaylist musicaPlaylistAtual = musicaPlaylistDAO.obterPorIdMusicaEIdPlaylistEIdUsuario(idMusica, idPlaylist, request.idUsuario());
 
         if (musicaPlaylistAtual == null) {
-            throw new ConflitoException("Música não encontrada", null);
+            throw new RecursoNaoEncontradoException("Música não encontrada");
         }
 
         MusicaPlaylist musicaPlaylistNova = new MusicaPlaylist();

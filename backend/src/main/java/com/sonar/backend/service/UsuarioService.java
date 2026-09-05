@@ -69,16 +69,7 @@ public class UsuarioService {
             throw new RecursoNaoEncontradoException("Usuário não encontrado");
         }
 
-        List<Playlist> playlists = playlistDAO.listarPlaylistsPorIdUsuario(idUsuario);
-
-        return playlists.stream()
-                .map(playlist -> new ObterPlaylistsUsuarioResponse(
-                        playlist.getIdPlaylist(),
-                        playlist.getNome(),
-                        0,
-                        playlist.getCriadoEm()
-                ))
-                .toList();
+        return playlistDAO.listarPlaylistsPorIdUsuario(idUsuario);
     }
 
 }

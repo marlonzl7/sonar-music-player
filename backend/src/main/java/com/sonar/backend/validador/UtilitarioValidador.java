@@ -1,4 +1,4 @@
-package com.sonar.backend.validator;
+package com.sonar.backend.validador;
 
 public class UtilitarioValidador {
 

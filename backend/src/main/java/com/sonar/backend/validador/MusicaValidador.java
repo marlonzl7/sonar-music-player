@@ -1,8 +1,5 @@
-package com.sonar.backend.validator;
+package com.sonar.backend.validador;
 
-import com.sonar.backend.dao.AlbumDAO;
-import com.sonar.backend.dao.ArtistaDAO;
-import com.sonar.backend.dao.GeneroDAO;
 import com.sonar.backend.dto.CadastrarMusicaRequest;
 import com.sonar.backend.dto.ErroCampoDTO;
 import org.springframework.stereotype.Component;

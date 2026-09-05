@@ -1,8 +1,7 @@
-package com.sonar.backend.validator;
+package com.sonar.backend.validador;
 
 import com.sonar.backend.dto.CadastrarUsuarioRequest;
 import com.sonar.backend.dto.ErroCampoDTO;
-import com.sonar.backend.utilitarios.Utilitario;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

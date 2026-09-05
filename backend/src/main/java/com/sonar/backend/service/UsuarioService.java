@@ -8,10 +8,9 @@ import com.sonar.backend.exception.DadosInvalidosException;
 import com.sonar.backend.exception.RecursoNaoEncontradoException;
 import com.sonar.backend.model.Playlist;
 import com.sonar.backend.model.Usuario;
-import com.sonar.backend.validator.UsuarioValidador;
+import com.sonar.backend.validador.UsuarioValidador;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service

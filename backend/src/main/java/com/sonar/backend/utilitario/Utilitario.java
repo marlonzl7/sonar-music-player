@@ -1,4 +1,4 @@
-package com.sonar.backend.utilitarios;
+package com.sonar.backend.utilitario;
 
 import com.sonar.backend.exception.RecursoNaoEncontradoException;
 

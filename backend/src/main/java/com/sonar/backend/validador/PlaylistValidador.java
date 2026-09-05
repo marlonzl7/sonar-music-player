@@ -1,4 +1,4 @@
-package com.sonar.backend.validator;
+package com.sonar.backend.validador;
 
 import com.sonar.backend.dto.AtualizarPlaylistRequest;
 import com.sonar.backend.dto.CadastrarPlaylistRequest;

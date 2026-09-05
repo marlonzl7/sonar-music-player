@@ -12,8 +12,8 @@ import com.sonar.backend.model.Album;
 import com.sonar.backend.model.Artista;
 import com.sonar.backend.model.Genero;
 import com.sonar.backend.model.Musica;
-import com.sonar.backend.utilitarios.Utilitario;
-import com.sonar.backend.validator.MusicaValidador;
+import com.sonar.backend.utilitario.Utilitario;
+import com.sonar.backend.validador.MusicaValidador;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

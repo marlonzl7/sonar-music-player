@@ -6,6 +6,6 @@ import java.util.List;
 
 public class ConflitoException extends ExcecaoDeNegocio {
     public ConflitoException(String mensagem, String campo) {
-       super(HttpStatus.CONFLICT, mensagem, List.of(new ErroCampoDTO(campo, "já está em uso.")));
+       super(HttpStatus.CONFLICT, mensagem, List.of(new ErroCampoDTO(campo, (campo != null) ? "já está em uso." : null)));
     }
 }

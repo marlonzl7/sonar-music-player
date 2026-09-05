@@ -1,5 +1,6 @@
 package com.sonar.backend.dao;
 
+import com.sonar.backend.dto.ObterPlaylistsUsuarioResponse;
 import com.sonar.backend.model.Playlist;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -14,18 +15,31 @@ import java.util.List;
 @Repository
 public class PlaylistDAO {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public PlaylistDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<Playlist> listarPlaylistsPorIdUsuario(Long idUsuario) {
-        String sql = "SELECT * FROM playlist WHERE id_usuario = ?";
+    public List<ObterPlaylistsUsuarioResponse> listarPlaylistsPorIdUsuario(Long idUsuario) {
+        String sql = """
+                    SELECT
+                        p.*,
+                        COUNT(mp.id_musica) AS totalMusicas
+                    FROM playlist p
+                    LEFT JOIN musica_playlist mp ON mp.id_playlist = p.id_playlist
+                    WHERE p.id_usuario = ?
+                    GROUP BY p.id_playlist
+                """;
 
         return jdbcTemplate.query(
                 sql,
-                new BeanPropertyRowMapper<>(Playlist.class),
+                (rs, rowNum) -> new ObterPlaylistsUsuarioResponse(
+                        rs.getLong("id_playlist"),
+                        rs.getString("nome"),
+                        rs.getInt("totalMusicas"),
+                        rs.getTimestamp("criado_em").toLocalDateTime()
+                ),
                 idUsuario
         );
     }

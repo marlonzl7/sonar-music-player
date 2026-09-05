@@ -61,4 +61,42 @@ public class PlaylistController {
                 .status(HttpStatus.NO_CONTENT)
                 .build();
     }
+
+    @PostMapping("{id}/musicas")
+    public ResponseEntity<CadastrarMusicaPlaylistResponse> cadastrarMusicaNaPlaylist(
+            @PathVariable Long id,
+            @RequestBody CadastrarMusicaPlaylistRequest request
+    ) {
+        CadastrarMusicaPlaylistResponse response = service.cadastrarMusicaNaPlaylist(id, request);
+
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(response);
+    }
+
+    @PutMapping("/{id}/musicas/{idMusica}")
+    public ResponseEntity<Void> atualizarMusicaDaPlaylist(
+            @PathVariable Long id,
+            @PathVariable Long idMusica,
+            @RequestBody AtualizarMusicaPlaylistRequest request
+    ) {
+        service.atualizarMusicaDaPlaylist(id, idMusica, request);
+
+        return ResponseEntity
+                .status(HttpStatus.NO_CONTENT)
+                .build();
+    }
+
+    @DeleteMapping("/{id}/musicas/{idMusica}")
+    public ResponseEntity<Void> excluirMusicaDaPlaylist(
+            @PathVariable Long id,
+            @PathVariable Long idMusica,
+            @RequestParam Long idUsuario
+    ) {
+        service.excluirMusicaDaPlaylist(id, idMusica, idUsuario);
+
+        return ResponseEntity
+                .status(HttpStatus.NO_CONTENT)
+                .build();
+    }
 }

@@ -1,7 +1,6 @@
-package com.sonar.backend.validator;
+package com.sonar.backend.validador;
 
-import com.sonar.backend.dto.AtualizarPlaylistRequest;
-import com.sonar.backend.dto.CadastrarPlaylistRequest;
+import com.sonar.backend.dto.CadastrarMusicaRequest;
 import com.sonar.backend.dto.ErroCampoDTO;
 import org.springframework.stereotype.Component;
 
@@ -9,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class PlaylistValidador {
+public class MusicaValidador {
 
-    public List<ErroCampoDTO> validarCadastro(CadastrarPlaylistRequest request) {
+    public List<ErroCampoDTO> validarCadastro(CadastrarMusicaRequest request) {
         List<ErroCampoDTO> erros = new ArrayList<>();
 
         ErroCampoDTO erroIdUsuario = validarIdNuloOuInvalido(request.idUsuario(), "idUsuario");
@@ -20,28 +19,32 @@ public class PlaylistValidador {
             erros.add(erroIdUsuario);
         }
 
-        ErroCampoDTO erroNome = validarString(request.nome(), "nome");
+        ErroCampoDTO erroIdArtista = validarIdNuloOuInvalido(request.idArtista(), "idArtista");
 
-        if (erroNome != null) {
-            erros.add(erroNome);
+        if (erroIdArtista != null) {
+            erros.add(erroIdArtista);
         }
 
-        return erros;
-    }
+        ErroCampoDTO erroIdGenero = validarIdNuloOuInvalido(request.idGenero(), "idGenero");
 
-    public List<ErroCampoDTO> validarAtualizacao(AtualizarPlaylistRequest request) {
-        List<ErroCampoDTO> erros = new ArrayList<>();
-
-        ErroCampoDTO erroIdUsuario = validarIdNuloOuInvalido(request.idUsuario(), "idUsuario");
-
-        if (erroIdUsuario != null) {
-            erros.add(erroIdUsuario);
+        if (erroIdGenero != null) {
+            erros.add(erroIdGenero);
         }
 
-        ErroCampoDTO erroNome = validarString(request.nome(), "nome");
+        ErroCampoDTO erroTitulo = validarString(request.titulo(), "título");
 
-        if (erroNome != null) {
-            erros.add(erroNome);
+        if (erroTitulo != null) {
+            erros.add(erroTitulo);
+        }
+
+        ErroCampoDTO erroCaminhoAudio = validarString(request.caminhoAudio(), "caminho áudio");
+
+        if (erroCaminhoAudio != null) {
+            erros.add(erroCaminhoAudio);
+        }
+
+        if (request.idAlbum() != null && request.idAlbum() <= 0) {
+            erros.add(new ErroCampoDTO("idAlbum", "deve ser um número positivo"));
         }
 
         return erros;

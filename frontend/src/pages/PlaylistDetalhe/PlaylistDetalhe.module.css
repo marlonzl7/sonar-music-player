@@ -1,0 +1,101 @@
+.container {
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+}
+
+.voltar {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.voltar:hover {
+  color: var(--text-main);
+}
+
+.container header {
+  margin-bottom: 1.5rem;
+}
+
+.container header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.formulario {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.formulario select {
+  flex: 1;
+  height: 2.5rem;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  color: var(--input-text);
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.formulario select:focus {
+  outline: 2px solid var(--border-focus);
+  outline-offset: -1px;
+}
+
+.formulario button {
+  width: auto;
+  padding: 0 1.25rem;
+  height: 2.5rem;
+}
+
+.erro {
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  color: #e24b4a;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.625rem;
+}
+
+.item p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-main);
+}
+
+.item button {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.item button:hover {
+  color: #e24b4a;
+}
+
+.mensagemVazia {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 2rem 0;
+}

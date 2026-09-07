@@ -47,6 +47,13 @@ sonar/
 
 ### 1. Back-end
 
+Antes de subir os containers, copie o arquivo de variáveis de ambiente de exemplo:
+
+```bash
+cp .env.exemplo .env
+```
+
+
 ```bash
 docker compose up -d
 cd backend

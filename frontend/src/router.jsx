@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
     path: '/',
     element: <Sidebar />,
     children: [
-      { index: true, element: <Navigate to="/musicas" replace /> },
+      { index: true, element: <Navigate to="/login" replace /> },
       { path: 'musicas', element: <Biblioteca /> },
       { path: 'musicas/nova', element: <CadastroMusica /> },
       { path: 'playlists', element: <Playlists /> },

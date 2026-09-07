@@ -56,7 +56,7 @@ export function Cadastro() {
 
           {erro && <p className={styles.erro}>{erro}</p>}
 
-          <BotaoPrimario type='submit' disabled={carregando}>
+          <BotaoPrimario type="submit" disabled={carregando}>
             { carregando ? 'Cadastrando...' : 'Cadastrar' }
           </BotaoPrimario>
         </form>

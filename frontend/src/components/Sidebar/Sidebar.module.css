@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 12.5rem;
+    background: var(--card-bg);
+    border-right: 1px solid var(--border);
+    padding: 1.5rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+}
+
+.brand {
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 0 0.75rem 1.25rem;
+    margin: 0;
+}
+
+.item,
+.itemAtivo {
+    display: block;
+    padding: 0.625rem 0.75rem;
+    border-radius: 0.375rem;
+    color: var(--input-text);
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.itemAtivo {
+    background: var(--btn-bg);
+    color: var(--text-main);
+}
+
+.main {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 100%;
+    max-width: 45rem;
+}
